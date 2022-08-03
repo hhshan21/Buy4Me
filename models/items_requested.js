@@ -10,6 +10,6 @@ const itemsRequestedSchema = new Schema({
     price_offered: { type: Number },
 });
 
-const ItemsRequested = mongoose.model("ItemsRequested", itemsRequestedSchema);
+const ItemsRequested = mongoose.model("Items Requested", itemsRequestedSchema);
 
 module.exports = ItemsRequested;
