@@ -10,3 +10,8 @@
 .card {
     margin-right: 3rem;
 }
+
+.bg-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
