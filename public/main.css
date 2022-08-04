@@ -7,11 +7,15 @@
     margin-left: 3rem;
 }
 
-.card {
+.item-request {
     margin-right: 3rem;
 }
 
 .bg-image {
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.signup-btn {
+    margin-right: 10%;
 }

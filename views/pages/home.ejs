@@ -23,7 +23,10 @@
 
     <div class="d-flex align-content-stretch flex-wrap mt-3 card-deck">
         <% items.forEach(item => { %>
-        <div class="card border-dark mb-3" style="width: 16%; height: 16%">
+        <div
+            class="card border-dark mb-3 item-request"
+            style="width: 16%; height: 16%"
+        >
             <div class="card-header"><%= item.username %></div>
 
             <img
