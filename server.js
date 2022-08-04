@@ -14,6 +14,7 @@ const pageController = require("./controllers/pages/page_controller");
 
 // route to home page
 app.get("/", pageController.showHome);
+// app.get("/", itemController.itemsRequested);
 
 app.listen(port, async () => {
     try {
