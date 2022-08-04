@@ -17,7 +17,7 @@ const userController = require("./controllers/users/users_controller");
 app.get("/", pageController.showHome);
 
 //Users Routes
-app.get("/signup", userController.signUp);
+app.get("/signup", userController.showSignUpForm);
 
 app.listen(port, async () => {
     try {
