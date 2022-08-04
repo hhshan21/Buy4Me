@@ -19,3 +19,11 @@
 .signup-btn {
     margin-right: 10%;
 }
+
+.signup-cancel-btn a {
+    color: rgb(0, 125, 78);
+}
+
+.signup-cancel-btn a:hover {
+    color: white;
+}
