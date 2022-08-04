@@ -7,6 +7,17 @@
     margin-left: 3rem;
 }
 
+.card {
+    height: 6%;
+    width: 15%;
+}
+
+.item-img {
+    height: 10rem;
+    width: 10rem;
+    margin-top: 5%;
+}
+
 .item-request {
     margin-right: 3rem;
 }
