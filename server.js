@@ -11,10 +11,13 @@ app.use(express.static("public"));
 const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@generalassembly.nrg3u.mongodb.net/?retryWrites=true&w=majority`;
 
 const pageController = require("./controllers/pages/page_controller");
+const userController = require("./controllers/users/users_controller");
 
 // route to home page
 app.get("/", pageController.showHome);
-// app.get("/", itemController.itemsRequested);
+
+//Users Routes
+app.get("/signup", userController.signUp);
 
 app.listen(port, async () => {
     try {
