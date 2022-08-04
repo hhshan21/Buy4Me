@@ -7,7 +7,7 @@
     margin-left: 3rem;
 }
 
-.card {
+.item-request {
     height: 6%;
     width: 15%;
 }
@@ -35,6 +35,6 @@
     color: rgb(0, 125, 78);
 }
 
-.signup-cancel-btn a:hover {
+.signup-cancel-btn {
     color: white;
 }
