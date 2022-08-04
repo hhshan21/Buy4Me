@@ -2,7 +2,7 @@
 
 const controller = {
     showSignUpForm: async (req, res) => {
-        res.send("Hello World");
+        res.render("pages/sign_up");
     },
 };
 
