@@ -18,6 +18,7 @@ app.get("/", pageController.showHome);
 
 //Users Routes
 app.get("/signup", userController.showSignUpForm);
+app.post("/signup", userController.signUp);
 
 app.listen(port, async () => {
     try {

@@ -1,8 +1,12 @@
 // const itemModel = require("../../models/items_requested");
 
 const controller = {
-    showSignUpForm: async (req, res) => {
+    showSignUpForm: (req, res) => {
         res.render("pages/sign_up");
+    },
+
+    signUp: (req, res) => {
+        res.send("Hello");
     },
 };
 
