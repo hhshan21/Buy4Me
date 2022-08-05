@@ -1,4 +1,4 @@
-// const itemModel = require("../../models/items_requested");
+const userValidators = require("../validators/users");
 
 const controller = {
     showSignUpForm: (req, res) => {
@@ -6,7 +6,19 @@ const controller = {
     },
 
     signUp: (req, res) => {
-        res.send("Hello");
+        // validations
+        const validationResults = userValidators.registerValidator.validate(
+            req.body
+        );
+
+        if (validationResults.error) {
+            res.send("validation error occurred");
+            return;
+        }
+
+        const validatedResults = validationResults.value;
+
+        res.send("You have signed up!");
     },
 };
 
