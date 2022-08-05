@@ -8,3 +8,5 @@ const validators = {
         confirm_password: Joi.string().required().valid(Joi.ref("password")),
     }),
 };
+
+module.exports = validators;
