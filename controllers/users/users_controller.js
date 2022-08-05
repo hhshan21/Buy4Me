@@ -6,12 +6,10 @@ const controller = {
     },
 
     signUp: (req, res) => {
-        // validations
+        // validations;
         const validationResults = userValidators.signUpValidator.validate(
             req.body
         );
-
-        console.log("validationResults", validationResults);
 
         if (validationResults.error) {
             res.send("validation error occurred");
