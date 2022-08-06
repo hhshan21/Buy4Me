@@ -27,8 +27,6 @@ const controller = {
         const hash = await bcrypt.hash(validatedResults.password, 10);
 
         // create the user and store in db
-        console.log("validatedResults: ", validatedResults);
-
         try {
             await userModel.create({
                 username: validatedResults.username,
@@ -39,7 +37,11 @@ const controller = {
             console.log(err);
             res.send("Failed to create user");
         }
-        res.send("You have signed up!");
+        res.send("You are signed up!");
+    },
+
+    showLoginForm: (req, res) => {
+        res.render("pages/login");
     },
 };
 

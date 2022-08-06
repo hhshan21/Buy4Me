@@ -16,9 +16,10 @@ const userController = require("./controllers/users/users_controller");
 // route to home page
 app.get("/", pageController.showHome);
 
-//Users Routes
+// Users Routes
 app.get("/signup", userController.showSignUpForm);
 app.post("/signup", userController.signUp);
+app.get("/login", userController.showLoginForm);
 
 app.listen(port, async () => {
     try {
