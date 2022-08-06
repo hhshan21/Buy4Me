@@ -38,3 +38,9 @@
 .signup-cancel-btn {
     color: white;
 }
+
+#password p {
+    font-size: small;
+    color: gray;
+    font-style: italic;
+}

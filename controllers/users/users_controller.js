@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const userModel = require("../../models/users/users");
 const userValidators = require("../validators/users");
 
 const controller = {
@@ -25,6 +26,19 @@ const controller = {
         // hash the password
         const hash = await bcrypt.hash(validatedResults.password, 10);
 
+        // create the user and store in db
+        console.log("validatedResults: ", validatedResults);
+
+        try {
+            await userModel.create({
+                username: validatedResults.username,
+                email: validatedResults.email,
+                hash: hash,
+            });
+        } catch (err) {
+            console.log(err);
+            res.send("Failed to create user");
+        }
         res.send("You have signed up!");
     },
 };
