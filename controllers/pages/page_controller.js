@@ -1,4 +1,4 @@
-const itemModel = require("../../models/items_requested");
+const itemModel = require("../../models/items/items_requested");
 
 const controller = {
     showHome: async (req, res) => {
