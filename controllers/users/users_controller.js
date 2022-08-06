@@ -37,7 +37,7 @@ const controller = {
             console.log(err);
             res.send("Failed to create user");
         }
-        res.send("You are signed up!");
+        res.redirect("/login");
     },
 
     showLoginForm: (req, res) => {
