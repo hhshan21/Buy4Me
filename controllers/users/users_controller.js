@@ -36,6 +36,7 @@ const controller = {
         } catch (err) {
             console.log(err);
             res.send("Failed to create user");
+            return;
         }
         res.redirect("/login");
     },
@@ -73,7 +74,7 @@ const controller = {
             res.send("Please key in the correct username or password");
             return;
         } else {
-            // log the user in
+            // log the user in by creating a session
             res.send("Login success!");
         }
     },
