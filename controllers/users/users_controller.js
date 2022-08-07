@@ -73,10 +73,24 @@ const controller = {
         if (!pwMatches) {
             res.send("Please key in the correct username or password");
             return;
-        } else {
-            // log the user in by creating a session
-            res.send("Login success!");
         }
+
+        // log the user in by creating a session
+        req.session.regenerate(function (err) {
+            if (err) next(err);
+
+            // store user information in session, typically a user id
+            req.session.user = req.body.user;
+
+            // save the session before redirection to ensure page
+            // load does not happen before session is saved
+            req.session.save(function (err) {
+                if (err) return next(err);
+                res.redirect("/");
+            });
+        });
+
+        res.send("Login success!");
     },
 };
 

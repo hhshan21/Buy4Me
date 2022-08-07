@@ -14,6 +14,14 @@ app.set("view engine", "ejs");
 // Apply middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,
+        cookie: { secure: false, httpOnly: false },
+    })
+);
 
 const pageController = require("./controllers/pages/page_controller");
 const userController = require("./controllers/users/users_controller");
