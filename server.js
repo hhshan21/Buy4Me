@@ -20,6 +20,7 @@ app.get("/", pageController.showHome);
 app.get("/signup", userController.showSignUpForm);
 app.post("/signup", userController.signUp);
 app.get("/login", userController.showLoginForm);
+app.post("/login", userController.login);
 
 app.listen(port, async () => {
     try {

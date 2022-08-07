@@ -43,6 +43,40 @@ const controller = {
     showLoginForm: (req, res) => {
         res.render("pages/login");
     },
+
+    login: async (req, res) => {
+        // validations here
+
+        const validatedResults = req.body;
+        console.log("validatedResults: ", validatedResults);
+
+        let user = null;
+
+        // get user with username from DB
+        try {
+            user = await userModel.findOne({
+                username: validatedResults.username,
+            });
+        } catch (err) {
+            res.send("Failed to get user");
+            return;
+        }
+
+        // user bcrypt to compare the given password with the one stored in DB
+
+        const pwMatches = await bcrypt.compare(
+            validatedResults.password,
+            user.hash
+        );
+
+        if (!pwMatches) {
+            res.send("Please key in the correct username or password");
+            return;
+        } else {
+            // log the user in
+            res.send("Login success!");
+        }
+    },
 };
 
 module.exports = controller;
