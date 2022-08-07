@@ -49,7 +49,6 @@ const controller = {
         // validations here
 
         const validatedResults = req.body;
-        console.log("validatedResults: ", validatedResults);
 
         let user = null;
 
@@ -80,17 +79,19 @@ const controller = {
             if (err) next(err);
 
             // store user information in session, typically a user id
-            req.session.user = req.body.user;
+            req.session.user = user.username;
 
             // save the session before redirection to ensure page
             // load does not happen before session is saved
             req.session.save(function (err) {
-                if (err) return next(err);
+                if (err) {
+                    return next(err);
+                }
                 res.redirect("/");
             });
         });
 
-        res.send("Login success!");
+        // res.send("Login success!");
     },
 };
 
