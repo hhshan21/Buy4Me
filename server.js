@@ -8,6 +8,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@generalassembly.nrg3u.mongodb.net/?retryWrites=true&w=majority`;
 
+const pageController = require("./controllers/pages/page_controller");
+const userController = require("./controllers/users/users_controller");
+const authMiddleware = require("./middlewares/auth_middleware");
+
 // Set view engine
 app.set("view engine", "ejs");
 
@@ -19,12 +23,9 @@ app.use(
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
-        cookie: { secure: false, httpOnly: false },
+        cookie: { secure: false, httpOnly: false, maxAge: 7200000 },
     })
 );
-
-const pageController = require("./controllers/pages/page_controller");
-const userController = require("./controllers/users/users_controller");
 
 // route to home page
 app.get("/", pageController.showHome);
@@ -34,6 +35,8 @@ app.get("/signup", userController.showSignUpForm);
 app.post("/signup", userController.signUp);
 app.get("/login", userController.showLoginForm);
 app.post("/login", userController.login);
+
+app.get("/profile", authMiddleware.isAuthenticated, userController.showProfile);
 
 app.listen(port, async () => {
     try {

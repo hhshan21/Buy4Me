@@ -13,12 +13,11 @@
 
 .item-request {
     height: 6%;
-    width: 18%;
+    width: 17%;
 }
 
-.item-img {
+.card-img-top {
     height: 10rem;
-    width: 10rem;
     margin-top: 5%;
 }
 

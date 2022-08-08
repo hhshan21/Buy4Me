@@ -91,9 +91,15 @@ const controller = {
                     res.send("unable to save session");
                     return;
                 }
-                res.redirect("/");
+                res.redirect("/profile");
             });
         });
+    },
+
+    showProfile: (req, res) => {
+        // verify that the session user exist -> done in the auth_middleware.js
+
+        res.send("welcome to your profile");
     },
 };
 
