@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const itemsRequestedSchema = new Schema({
+const requestSchema = new Schema({
+    // user: { type: Schema.Types.ObjectId, ref: "User" },
     username: { type: String },
+    email: { type: String },
     img: { type: String },
     description: { type: String },
     country: { type: String },
@@ -10,6 +12,6 @@ const itemsRequestedSchema = new Schema({
     price_offered: { type: Number },
 });
 
-const ItemsRequested = mongoose.model("Items Requested", itemsRequestedSchema);
+const Request = mongoose.model("Request", requestSchema);
 
-module.exports = ItemsRequested;
+module.exports = Request;

@@ -46,7 +46,7 @@ const controller = {
     },
 
     login: async (req, res) => {
-        // validations here
+        // TO DO validations here
 
         const validatedResults = req.body;
 
@@ -76,7 +76,10 @@ const controller = {
 
         // log the user in by creating a session
         req.session.regenerate(function (err) {
-            if (err) next(err);
+            if (err) {
+                res.send("unable to regenerate session");
+                return;
+            }
 
             // store user information in session, typically a user id
             req.session.user = user.username;
@@ -85,13 +88,12 @@ const controller = {
             // load does not happen before session is saved
             req.session.save(function (err) {
                 if (err) {
-                    return next(err);
+                    res.send("unable to save session");
+                    return;
                 }
                 res.redirect("/");
             });
         });
-
-        // res.send("Login success!");
     },
 };
 

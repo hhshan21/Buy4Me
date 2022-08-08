@@ -1,10 +1,11 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const itemRequested = require("../models/items/items_requested");
+const itemRequested = require("../models/items/request");
 
 const data = [
     {
         username: "starskitten",
+        email: "starskitten@gmail.com",
         img: "https://www.tnp.sg/sites/default/files/styles/large-portrait/public/articles/2019/09/19/NP_20190919_NTUC19JOXD_5125229.jpg?itok=bi5CuWqz",
         description: "Little Prince instant noodle",
         country: "Taiwan",
@@ -13,6 +14,7 @@ const data = [
     },
     {
         username: "toastie",
+        email: "breadlover@gmail.com",
         img: "https://japan-trip-culture.com/wp-content/uploads/2019/05/Screen-Shot-2019-05-05-at-12.28.11-AM.png",
         description: "Jyagariko",
         country: "Japan",
@@ -21,6 +23,7 @@ const data = [
     },
     {
         username: "natsuiii",
+        email: "natsuiii@gmail.com",
         img: "https://static.mothership.sg/1/2020/05/1GM01205_724-1.jpg",
         description: "Fila x Subway shoes Size:38",
         country: "Korea",
@@ -29,6 +32,7 @@ const data = [
     },
     {
         username: "Abeybaby",
+        email: "abraham@gmail.com",
         img: "https://www.ubuy.vn/productimg/?image=aHR0cHM6Ly9pLmViYXlpbWcuY29tL2ltYWdlcy9nL1JuRUFBT1N3OHcxWUEweTgvcy1sNTAwLmpwZw.jpg",
         description: "Lach Gummi Softies",
         country: "Germany",
@@ -37,6 +41,7 @@ const data = [
     },
     {
         username: "Sykkunno",
+        email: "Sykkunno@gmail.com",
         img: "https://cw.lnwfile.com/_/cw/_raw/cj/zg/uv.jpg",
         description: "I'm Real Mango",
         country: "Thailand",
@@ -45,6 +50,7 @@ const data = [
     },
     {
         username: "xingQitian",
+        email: "sundayLove@gmail.com",
         img: "https://ae01.alicdn.com/kf/HTB15fAJHVXXXXcjXFXXq6xXFXXXd/Chinese-specialty-snacks-TONGYI-noodles-travel-portable-Spicy-food-Chinese-special-food-delicious-noodles-4bag-lot.jpg_Q90.jpg_.webp",
         description: "Beef Instant noodles",
         country: "China",
@@ -53,6 +59,7 @@ const data = [
     },
     {
         username: "xXchipyyXx",
+        email: "xXchipyyXx@gmail.com",
         img: "https://i.pinimg.com/736x/2d/ea/ee/2deaeeced60e0c028417433b75df5a6c.jpg",
         description: "Honey Butter Chips",
         country: "Korea",
@@ -61,6 +68,7 @@ const data = [
     },
     {
         username: "valky",
+        email: "valky@gmail.com",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAGNEHaXu7noDPK39umGYOIVV8yTmheH6mLQ&usqp=CAU",
         description: "Koala Mango Cookies",
         country: "Hong Kong",
@@ -69,6 +77,7 @@ const data = [
     },
     {
         username: "fueslie",
+        email: "fueslie@gmail.com",
         img: "http://cdn.shopify.com/s/files/1/0574/3129/4129/products/VitalisJoghurtMusli.jpg?v=1634489837",
         description: "Dr Oetker Joghurt Müsli",
         country: "Germany",
@@ -77,6 +86,7 @@ const data = [
     },
     {
         username: "BostonGal",
+        email: "BostonGal@gmail.com",
         img: "https://m.media-amazon.com/images/I/811hjolWF6L._SX425_.jpg",
         description: "Boston Red Sox 47 Fitted hat",
         country: "USA",
@@ -85,6 +95,7 @@ const data = [
     },
     {
         username: "PeterParker",
+        email: "spiderman@gmail.com",
         img: "https://cdn-images.farfetch-contents.com/13/91/79/64/13917964_21714976_600.jpg",
         description: "Air Jordan 1 Mid SE lakers Size: 42",
         country: "USA",
@@ -93,6 +104,7 @@ const data = [
     },
     {
         username: "Sydeon",
+        email: "sydney@gmail.com",
         img: "http://cdn.shopify.com/s/files/1/0585/0654/3312/products/05_Front_1080px_248_1024x.jpg?v=1639727607",
         description: "Offline tv Hoodie",
         country: "USA",
@@ -105,6 +117,7 @@ const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PAS
 
 async function init() {
     const DB = await mongoose.connect(connStr, { dbName: "Buy4Me" });
+
     await itemRequested.insertMany(data);
 
     console.log("success!");
