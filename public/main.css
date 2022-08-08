@@ -7,9 +7,13 @@
     margin-left: 3rem;
 }
 
+.contact {
+    margin-left: 10%;
+}
+
 .item-request {
     height: 6%;
-    width: 15%;
+    width: 18%;
 }
 
 .item-img {
@@ -37,6 +41,12 @@
 
 .signup-cancel-btn {
     color: white;
+}
+
+#username p {
+    font-size: small;
+    color: gray;
+    font-style: italic;
 }
 
 #password p {
