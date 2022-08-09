@@ -1,18 +1,20 @@
+const Items = require("../../models/items/request");
+const Users = require("../../models/users/users");
+
 const controller = {
-    newRequestForm: async (req, res) => {
+    newItemRequestForm: async (req, res) => {
         res.render("items/request");
     },
 
-    createRequest: async (req, res) => {
-        console.log("req.body: ", req.body);
+    createItemRequest: async (req, res) => {
         console.log("req.session: ", req.session);
-        // const projectData = req.body;
-        // const profileOwner = await Users.findById(
-        //     `${req.session?.currentUser?._id}`
-        // );
-        // projectData.author_id = profileOwner._id;
-        // const newProject = await Projects.create(projectData);
-        // res.redirect(`/projects/${newProject._id}`);
+        const itemData = req.body;
+        const userProfile = await Users.findById(`${req.session?.user?._id}`);
+        console.log("userProfile: ", userProfile);
+        // console.log("req.session.user: ", req.session.user);
+        // itemData.author_id = userProfile._id;
+        const newItemRequest = await Items.create(itemData);
+        res.redirect("/");
     },
 };
 

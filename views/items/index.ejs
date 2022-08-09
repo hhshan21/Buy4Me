@@ -9,15 +9,13 @@
         <img
             src="<%= item.img %>"
             class="card-img-top item-img"
-            alt="Little Prince instant noodle"
+            alt="<%= item.description %>"
         />
 
         <div class="card-body text-dark">
             <h5 class="card-title text-center"><%= item.description %></h5>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    Country: <%= item.description %>
-                </li>
+                <li class="list-group-item">Country: <%= item.country %></li>
                 <li class="list-group-item">Quantity: <%= item.quantity %></li>
                 <li class="list-group-item">
                     Price offered (SGD): <%= item.price_offered %>
