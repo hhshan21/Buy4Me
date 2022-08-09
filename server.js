@@ -41,8 +41,9 @@ app.post("/logout", userController.logout);
 app.get(
     "/request",
     authMiddleware.isAuthenticated,
-    itemController.showRequestForm
+    itemController.newRequestForm
 );
+app.post("/request", itemController.createRequest);
 
 app.get("/profile", authMiddleware.isAuthenticated, userController.showProfile);
 

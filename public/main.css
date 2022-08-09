@@ -53,3 +53,9 @@
     color: gray;
     font-style: italic;
 }
+
+#quantity p {
+    font-size: small;
+    color: gray;
+    font-style: italic;
+}
