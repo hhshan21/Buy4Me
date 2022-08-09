@@ -36,6 +36,7 @@ app.get("/signup", userController.showSignUpForm);
 app.post("/signup", userController.signUp);
 app.get("/login", userController.showLoginForm);
 app.post("/login", userController.login);
+app.post("/logout", userController.logout);
 
 app.get("/profile", authMiddleware.isAuthenticated, userController.showProfile);
 
