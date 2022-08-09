@@ -1,10 +1,10 @@
-const itemModel = require("../../models/items/request");
+const Request = require("../../models/requests/request");
 
 const controller = {
     showHome: async (req, res) => {
-        const items = await itemModel.find().exec();
+        const requests = await Request.find().exec();
 
-        res.render("pages/home", { items });
+        res.render("pages/home", { requests });
     },
 };
 

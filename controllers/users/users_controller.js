@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const userModel = require("../../models/users/users");
+const Users = require("../../models/users/users");
 const userValidators = require("../validators/users");
 
 const controller = {
@@ -28,7 +28,7 @@ const controller = {
 
         // create the user and store in db
         try {
-            await userModel.create({
+            await Users.create({
                 username: validatedResults.username,
                 email: validatedResults.email,
                 hash: hash,
@@ -54,7 +54,7 @@ const controller = {
 
         // get user with username from DB
         try {
-            user = await userModel.findOne({
+            user = await Users.findOne({
                 username: validatedResults.username,
             });
         } catch (err) {
@@ -82,7 +82,7 @@ const controller = {
             }
 
             // store user information in session, typically a user id
-            req.session.user = user.username;
+            req.session.username = user.username;
 
             // save the session before redirection to ensure page
             // load does not happen before session is saved
@@ -100,7 +100,7 @@ const controller = {
         // get user data from db using session user
         let user = null;
         try {
-            user = await userModel.findOne({ username: req.session.user });
+            user = await Users.findOne({ username: req.session.user });
         } catch (err) {
             console.log(err);
             res.redirect("/login");

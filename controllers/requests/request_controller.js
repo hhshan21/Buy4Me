@@ -1,4 +1,4 @@
-const Items = require("../../models/items/request");
+const Request = require("../../models/requests/request");
 const Users = require("../../models/users/users");
 
 const controller = {
@@ -8,12 +8,12 @@ const controller = {
 
     createItemRequest: async (req, res) => {
         console.log("req.session: ", req.session);
-        const itemData = req.body;
+        const requestData = req.body;
         const userProfile = await Users.findById(`${req.session?.user?._id}`);
         console.log("userProfile: ", userProfile);
         // console.log("req.session.user: ", req.session.user);
-        // itemData.author_id = userProfile._id;
-        const newItemRequest = await Items.create(itemData);
+        // itemData.user = userProfile;
+        const newItemRequest = await Request.create(requestData);
         res.redirect("/");
     },
 };
