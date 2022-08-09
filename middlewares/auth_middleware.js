@@ -16,7 +16,6 @@ module.exports = {
             res.locals.authUser = req.session.user;
         }
 
-        console.log("res.locals.authUser: ", res.locals.authUser);
         next();
     },
 };
