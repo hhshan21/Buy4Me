@@ -91,7 +91,7 @@ const controller = {
                     res.send("unable to save session");
                     return;
                 }
-                res.redirect("/profile");
+                res.redirect("/");
             });
         });
     },
