@@ -1,5 +1,5 @@
 const controller = {
-    showRequestForm: (req, res) => {
+    showRequestForm: async (req, res) => {
         res.render("items/request");
     },
 };
