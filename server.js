@@ -15,7 +15,7 @@ const authMiddleware = require("./middlewares/auth_middleware");
 // Set view engine
 app.set("view engine", "ejs");
 
-// Apply middlewares
+// Apply middlewares -> global variable
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(
@@ -26,6 +26,7 @@ app.use(
         cookie: { secure: false, httpOnly: false, maxAge: 7200000 },
     })
 );
+app.use(authMiddleware.setAuthUser);
 
 // route to home page
 app.get("/", pageController.showHome);

@@ -96,10 +96,17 @@ const controller = {
         });
     },
 
-    showProfile: (req, res) => {
-        // verify that the session user exist -> done in the auth_middleware.js
-
-        res.send("welcome to your profile");
+    showProfile: async (req, res) => {
+        // get user data from db using session user
+        let user = null;
+        try {
+            user = await userModel.findOne({ username: req.session.user });
+        } catch (err) {
+            console.log(err);
+            res.redirect("/login");
+            return;
+        }
+        res.render("users/profile", { user });
     },
 };
 
