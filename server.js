@@ -11,6 +11,7 @@ const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PAS
 const pageController = require("./controllers/pages/page_controller");
 const userController = require("./controllers/users/users_controller");
 const authMiddleware = require("./middlewares/auth_middleware");
+const itemController = require("./controllers/items/item_controller");
 
 // Set view engine
 app.set("view engine", "ejs");
@@ -37,6 +38,7 @@ app.post("/signup", userController.signUp);
 app.get("/login", userController.showLoginForm);
 app.post("/login", userController.login);
 app.post("/logout", userController.logout);
+app.get("/request", itemController.showRequestForm);
 
 app.get("/profile", authMiddleware.isAuthenticated, userController.showProfile);
 

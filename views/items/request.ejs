@@ -1,32 +1,101 @@
-<div class="d-flex align-content-stretch flex-wrap mt-3 card-deck">
-    <% items.forEach(item => { %>
-    <div class="card border-dark mb-3 item-request">
-        <div class="card-header">
-            <%= item.username %>
-            <a href="" class="btn btn-outline-success contact">Contact</a>
-        </div>
+<%- include('../partials/header'); %>
 
-        <img
-            src="<%= item.img %>"
-            class="card-img-top item-img"
-            alt="Little Prince instant noodle"
-        />
+<section
+    class="vh-100 bg-image"
+    style="
+        background-image: url('https://media.istockphoto.com/photos/cute-children-or-baby-card-white-clouds-on-the-light-blue-wooden-picture-id1090975842?k=20&m=1090975842&s=612x612&w=0&h=4Ko6v1TJSVqo343f7pPKgU7-bAadGpwHfTTTw7Nokaw=');
+    "
+>
+    <div class="d-flex align-items-center">
+        <div class="container">
+            <div
+                class="row d-flex justify-content-center align-items-center mt-5"
+            >
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6 login-card">
+                    <div class="card" style="border-radius: 15px">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-4">
+                                Post a Request
+                            </h2>
 
-        <div class="card-body text-dark">
-            <h5 class="card-title text-center"><%= item.description %></h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    Country: <%= item.description %>
-                </li>
-                <li class="list-group-item">Quantity: <%= item.quantity %></li>
-                <li class="list-group-item">
-                    Price offered (SGD): <%= item.price_offered %>
-                </li>
-                <!-- <li class="list-group-item text-center">
-                        <a href="" class="btn btn-outline-success">Contact</a>
-                    </li> -->
-            </ul>
+                            <form
+                                id="login-form"
+                                method="POST"
+                                action="/request"
+                            >
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="imgurl"
+                                        >img URL</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control form-control-lg"
+                                        name="imgurl"
+                                    />
+                                </div>
+
+                                <div class="form-outline mb-4" id="description">
+                                    <label class="form-label" for="description"
+                                        >Description</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control form-control-lg"
+                                        name="description"
+                                    />
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="country"
+                                        >Country</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control form-control-lg"
+                                        name="country"
+                                    />
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="quantity"
+                                        >Quantity</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control form-control-lg"
+                                        name="quantity"
+                                    />
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="price"
+                                        >Price offered (SGD)</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control form-control-lg"
+                                        name="price"
+                                    />
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-outline-success signup-btn"
+                                    >
+                                        Post
+                                    </button>
+                                    <a href="/" style="text-decoration: none"
+                                        ><button
+                                            type="button"
+                                            class="btn btn-outline-success signup-cancel-btn"
+                                        >
+                                            Cancel
+                                        </button></a
+                                    >
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <% }) %>
-</div>
+</section>
