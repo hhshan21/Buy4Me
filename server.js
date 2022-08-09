@@ -11,7 +11,7 @@ const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PAS
 const pageController = require("./controllers/pages/page_controller");
 const userController = require("./controllers/users/users_controller");
 const authMiddleware = require("./middlewares/auth_middleware");
-const itemController = require("./controllers/items/item_controller");
+const requestController = require("./controllers/requests/request_controller");
 
 // Set view engine
 app.set("view engine", "ejs");
@@ -42,9 +42,9 @@ app.get("/profile", authMiddleware.isAuthenticated, userController.showProfile);
 app.get(
     "/request",
     authMiddleware.isAuthenticated,
-    itemController.newItemRequestForm
+    requestController.newItemRequestForm
 );
-app.post("/request", itemController.createItemRequest);
+app.post("/request", requestController.createItemRequest);
 
 app.listen(port, async () => {
     try {

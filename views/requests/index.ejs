@@ -1,28 +1,27 @@
 <div class="d-flex align-content-stretch flex-wrap mt-3 card-deck">
-    <% items.forEach(item => { %>
+    <% requests.forEach(request => { %>
     <div class="card border-dark mb-3 item-request">
         <div class="card-header">
-            <%= item.username %>
+            <%= request.username %>
             <a href="" class="btn btn-outline-success contact">Contact</a>
         </div>
 
         <img
-            src="<%= item.img %>"
+            src="<%= request.img %>"
             class="card-img-top item-img"
-            alt="<%= item.description %>"
+            alt="<%= request.description %>"
         />
 
         <div class="card-body text-dark">
-            <h5 class="card-title text-center"><%= item.description %></h5>
+            <h5 class="card-title text-center"><%= request.description %></h5>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Country: <%= item.country %></li>
-                <li class="list-group-item">Quantity: <%= item.quantity %></li>
+                <li class="list-group-item">Country: <%= request.country %></li>
                 <li class="list-group-item">
-                    Price offered (SGD): <%= item.price_offered %>
+                    Quantity: <%= request.quantity %>
                 </li>
-                <!-- <li class="list-group-item text-center">
-                        <a href="" class="btn btn-outline-success">Contact</a>
-                    </li> -->
+                <li class="list-group-item">
+                    Price offered (SGD): <%= request.price_offered %>
+                </li>
             </ul>
         </div>
     </div>
