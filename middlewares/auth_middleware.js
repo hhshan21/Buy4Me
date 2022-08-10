@@ -1,7 +1,7 @@
 module.exports = {
     isAuthenticated: (req, res, next) => {
         // verify that the session user exist
-        if (!req.session.username) {
+        if (!req.session.user) {
             res.redirect("/login");
             return;
         }
@@ -12,8 +12,8 @@ module.exports = {
     setAuthUser: (req, res, next) => {
         res.locals.authUser = null;
 
-        if (req.session.username) {
-            res.locals.authUser = req.session.username;
+        if (req.session.user) {
+            res.locals.authUser = req.session.user;
         }
 
         next();

@@ -1,8 +1,8 @@
-<div class="d-flex align-content-stretch flex-wrap mt-3 card-deck">
+<div class="d-flex align-content-stretch flex-wrap mt-5 card-deck">
     <% requests.forEach(request => { %>
     <div class="card border-dark mb-3 item-request">
         <div class="card-header">
-            <%= request.username %>
+            <%= request.user.username %>
             <a
                 href="<%= request.email %>"
                 class="btn btn-outline-success contact"
@@ -26,7 +26,8 @@
                 <li class="list-group-item">
                     Price offered (SGD): <%= request.price_offered %>
                 </li>
-                <% if (authUser) { %>
+                <% if (authUser && (authUser.id === request.user._id.toString()
+                )) { %>
                 <li class="list-group-item">
                     <a href="/update" class="btn btn-outline-success edit"
                         >Edit</a

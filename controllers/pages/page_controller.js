@@ -3,8 +3,8 @@ const Request = require("../../models/requests/request");
 
 const controller = {
     showHome: async (req, res) => {
-        const requests = await Request.find().exec();
-        // console.log("requests: ", requests);
+        const requests = await Request.find().populate("user", "username");
+        console.log("requests: ", requests);
 
         res.render("pages/home", { requests });
     },

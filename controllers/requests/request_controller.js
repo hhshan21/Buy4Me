@@ -1,5 +1,5 @@
 const Request = require("../../models/requests/request");
-const Users = require("../../models/users/users");
+// const Users = require("../../models/users/users");
 
 const controller = {
     newRequest: (req, res) => {
@@ -8,24 +8,15 @@ const controller = {
 
     // create a new item request
     createRequest: async (req, res) => {
-        // validate request
-        if (!req.body) {
-            res.status(400).send("Content cannot be empty!");
-            return;
-        }
-
         const requestData = req.body;
-        requestData.username = req.session.username;
 
         console.log("requestData.username: ", requestData.username);
         console.log("requestData: ", requestData);
 
-        const userProfile = await Users.find({
-            username: requestData.username,
+        const newItemRequest = await Request.create({
+            ...requestData,
+            user: req.session.user.id,
         });
-        console.log("userProfile: ", userProfile);
-
-        const newItemRequest = await Request.create(requestData);
         res.redirect("/");
     },
 
@@ -34,11 +25,7 @@ const controller = {
     },
 
     update: async (req, res) => {
-        // validate request
-        if (!req.body) {
-            res.status(400).send("Data to update cannot be empty");
-            return;
-        }
+        console.log("req.session: ", req.session);
 
         const editItemRequest = await Request.findByIdAndUpdate();
         res.redirect("/");

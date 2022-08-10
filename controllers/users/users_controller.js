@@ -82,7 +82,12 @@ const controller = {
             }
 
             // store user information in session, typically a user id
-            req.session.username = user.username;
+            req.session.user = {
+                username: user.username,
+                id: user._id,
+                email: user.email,
+            };
+            console.log("req.session.user: ", req.session.user);
 
             // save the session before redirection to ensure page
             // load does not happen before session is saved
@@ -100,13 +105,13 @@ const controller = {
         // get user data from db using session user
         let user = null;
         try {
-            user = await Users.findOne({ username: req.session.username });
+            user = await req.session.user.username;
         } catch (err) {
             console.log(err);
             res.redirect("/login");
             return;
         }
-        res.render("users/profile", { user });
+        res.render("users/profile", user);
     },
 
     logout: async (req, res) => {
