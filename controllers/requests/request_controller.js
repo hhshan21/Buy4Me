@@ -6,7 +6,14 @@ const controller = {
         res.render("requests/request");
     },
 
+    // create a new item request
     createItemRequest: async (req, res) => {
+        // validate request
+        if (!req.body) {
+            res.status(400).send("Content cannot be empty!");
+            return;
+        }
+
         const requestData = req.body;
         requestData.username = req.session.username;
 
