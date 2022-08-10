@@ -42,12 +42,27 @@ app.get("/profile", authMiddleware.isAuthenticated, userController.showProfile);
 app.get(
     "/request",
     authMiddleware.isAuthenticated,
-    requestController.newItemRequestForm
+    requestController.newRequest
 );
 app.post(
     "/request",
     authMiddleware.isAuthenticated,
-    requestController.createItemRequest
+    requestController.createRequest
+);
+app.get(
+    "/request",
+    authMiddleware.isAuthenticated,
+    requestController.showUpdateRequestForm
+);
+app.put(
+    "/request/:id",
+    authMiddleware.isAuthenticated,
+    requestController.update
+);
+app.delete(
+    "/request/:id",
+    authMiddleware.isAuthenticated,
+    requestController.delete
 );
 
 app.listen(port, async () => {
