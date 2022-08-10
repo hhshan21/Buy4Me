@@ -54,11 +54,7 @@ app.get(
     authMiddleware.isAuthenticated,
     requestController.showUpdateRequestForm
 );
-// app.put(
-//     "/request/:id",
-//     authMiddleware.isAuthenticated,
-//     requestController.update
-// );
+app.put("/update", authMiddleware.isAuthenticated, requestController.update);
 // app.delete(
 //     "/request/:id",
 //     authMiddleware.isAuthenticated,
