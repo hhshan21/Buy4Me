@@ -60,7 +60,12 @@
     font-style: italic;
 }
 
-.card-body a {
+.request-card a {
     margin-top: 6%;
     margin-right: 10%;
+}
+
+.request-card .delete {
+    margin-top: 6%;
+    margin-right: 0;
 }

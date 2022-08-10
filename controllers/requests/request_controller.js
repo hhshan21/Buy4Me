@@ -9,6 +9,7 @@ const controller = {
     createItemRequest: async (req, res) => {
         const requestData = req.body;
         requestData.username = req.session.username;
+
         console.log("requestData.username: ", requestData.username);
         console.log("requestData: ", requestData);
 
