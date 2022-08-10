@@ -50,20 +50,20 @@ app.post(
     requestController.createRequest
 );
 app.get(
-    "/request",
+    "/update",
     authMiddleware.isAuthenticated,
     requestController.showUpdateRequestForm
 );
-app.put(
-    "/request/:id",
-    authMiddleware.isAuthenticated,
-    requestController.update
-);
-app.delete(
-    "/request/:id",
-    authMiddleware.isAuthenticated,
-    requestController.delete
-);
+// app.put(
+//     "/request/:id",
+//     authMiddleware.isAuthenticated,
+//     requestController.update
+// );
+// app.delete(
+//     "/request/:id",
+//     authMiddleware.isAuthenticated,
+//     requestController.delete
+// );
 
 app.listen(port, async () => {
     try {
