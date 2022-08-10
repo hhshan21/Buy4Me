@@ -100,7 +100,7 @@ const controller = {
         // get user data from db using session user
         let user = null;
         try {
-            user = await Users.findOne({ username: req.session.user });
+            user = await Users.findOne({ username: req.session.username });
         } catch (err) {
             console.log(err);
             res.redirect("/login");

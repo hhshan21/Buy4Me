@@ -44,7 +44,11 @@ app.get(
     authMiddleware.isAuthenticated,
     requestController.newItemRequestForm
 );
-app.post("/request", requestController.createItemRequest);
+app.post(
+    "/request",
+    authMiddleware.isAuthenticated,
+    requestController.createItemRequest
+);
 
 app.listen(port, async () => {
     try {
