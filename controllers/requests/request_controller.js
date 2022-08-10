@@ -7,12 +7,16 @@ const controller = {
     },
 
     createItemRequest: async (req, res) => {
-        console.log("req.session: ", req.session);
         const requestData = req.body;
-        // const userProfile = await Users.findById(`${req.session?.user?._id}`);
-        // console.log("userProfile: ", userProfile);
-        // console.log("req.session.user: ", req.session.user);
-        // itemData.user = userProfile;
+        requestData.username = req.session.username;
+        console.log("requestData.username: ", requestData.username);
+        console.log("requestData: ", requestData);
+
+        const userProfile = await Users.find({
+            username: requestData.username,
+        });
+        console.log("userProfile: ", userProfile);
+
         const newItemRequest = await Request.create(requestData);
         res.redirect("/");
     },
