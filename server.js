@@ -65,11 +65,11 @@ app.put(
     authMiddleware.isAuthenticated,
     requestController.edit
 );
-// app.delete(
-//     "/request/:id",
-//     authMiddleware.isAuthenticated,
-//     requestController.delete
-// );
+app.delete(
+    "/request/:request_id/delete",
+    authMiddleware.isAuthenticated,
+    requestController.delete
+);
 
 app.listen(port, async () => {
     try {

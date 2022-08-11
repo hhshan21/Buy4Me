@@ -26,7 +26,7 @@ const controller = {
         try {
             const requestId = req.params.request_id;
             const requestUpdate = req.body;
-            console.log("requestUpdate: ", requestUpdate);
+
             const editItemRequest = await Request.findByIdAndUpdate(
                 requestId,
                 { ...requestUpdate },
@@ -40,7 +40,11 @@ const controller = {
     },
 
     delete: async (req, res) => {
-        const delItemRequest = await Request.findByIdAndDelete();
+        try {
+            const editItemRequest = await Request.findByIdAndDelete(requestId);
+        } catch (err) {
+            console.log(err);
+        }
         res.redirect("/");
     },
 };
