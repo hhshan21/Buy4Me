@@ -2,10 +2,13 @@
     <% requests.forEach(request => { %>
     <div class="card border-dark mb-3 item-request">
         <div class="card-header">
-            <%= request.user.username %>
+            <%= request.user.username %> <% if (authUser) { %>
             <a href='mailto:""' class="btn btn-outline-success contact"
                 >Contact</a
             >
+            <% } else { %>
+            <a href="/login"></a>
+            <% } %>
         </div>
 
         <img
