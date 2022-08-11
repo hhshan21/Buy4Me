@@ -18,11 +18,7 @@
                                 Edit your Request
                             </h2>
 
-                            <form
-                                id="login-form"
-                                method="POST"
-                                action="/edit"
-                            >
+                            <form id="login-form" method="POST" action="/edit">
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="img"
                                         >img URL</label
@@ -31,11 +27,15 @@
                                         type="url"
                                         class="form-control form-control-lg"
                                         name="img"
+                                        value="<%=request.img%>"
                                         required
                                     />
                                 </div>
 
-                                <div class="form-outline mb-4" id="edit-description">
+                                <div
+                                    class="form-outline mb-4"
+                                    id="edit-description"
+                                >
                                     <label class="form-label" for="description"
                                         >Description</label
                                     >
@@ -43,6 +43,7 @@
                                         type="text"
                                         class="form-control form-control-lg"
                                         name="description"
+                                        value="<%=request.description%>"
                                         required
                                     />
                                 </div>
@@ -54,10 +55,14 @@
                                         type="text"
                                         class="form-control form-control-lg"
                                         name="country"
+                                        value="<%=request.country%>"
                                         required
                                     />
                                 </div>
-                                <div class="form-outline mb-4" id="edit-quantity">
+                                <div
+                                    class="form-outline mb-4"
+                                    id="edit-quantity"
+                                >
                                     <label class="form-label" for="quantity"
                                         >Quantity</label
                                     >
@@ -67,6 +72,7 @@
                                         name="quantity"
                                         min="1"
                                         max="30"
+                                        value="<%=request.quantity%>"
                                         required
                                     />
                                     <p>Between 1 to 30</p>
@@ -81,18 +87,21 @@
                                         type="text"
                                         class="form-control form-control-lg"
                                         name="price_offered"
+                                        value="<%=request.price_offered%>"
                                         required
                                     />
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <a href="/" style="text-decoration: none"
-                                    <button
-                                        type="submit"
-                                        class="btn btn-outline-success update-btn"
-                                    >
-                                        Update
-                                    </button>
+                                    <a href="/" style="text-decoration: none">
+                                        <button
+                                            type="submit"
+                                            class="btn btn-outline-success update-btn"
+                                        >
+                                            Update
+                                        </button>
+                                    </a>
+
                                     <a href="/" style="text-decoration: none"
                                         ><button
                                             type="button"

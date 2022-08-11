@@ -18,14 +18,20 @@ const controller = {
     },
 
     showEditRequestForm: async (req, res) => {
-        const item = await Request.findById(req.params.request_id);
+        const requestId = req.params.request_id;
+        console.log("requestId: ", requestId);
 
-        res.render("requests/edit", { item });
+        const request = await Request.findById(requestId);
+        console.log("request: ", request);
+        res.render("requests/edit", { request });
     },
 
-    update: async (req, res) => {
+    edit: async (req, res) => {
+        const requestId = req.params.request_id;
+        const requestUpdate = req.body;
+        const oldRequest = await Request.findById(requestId);
         const editItemRequest = await Request.findByIdAndUpdate();
-        res.redirect("/");
+        // res.redirect("/");
     },
 
     delete: async (req, res) => {

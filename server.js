@@ -58,7 +58,11 @@ app.get(
     authMiddleware.isAuthenticated,
     requestController.showEditRequestForm
 );
-// app.put("/edit", authMiddleware.isAuthenticated, requestController.update);
+// app.put(
+//     "/request/:request_id",
+//     authMiddleware.isAuthenticated,
+//     requestController.edit
+// );
 // app.delete(
 //     "/request/:id",
 //     authMiddleware.isAuthenticated,
