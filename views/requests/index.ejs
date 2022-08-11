@@ -3,7 +3,9 @@
     <div class="card border-dark mb-3 item-request">
         <div class="card-header">
             <%= request.user.username %> <% if (authUser) { %>
-            <a href='mailto:""' class="btn btn-outline-success contact"
+            <a
+                href="mailto:<%= request.user.email%>"
+                class="btn btn-outline-success contact"
                 >Contact</a
             >
             <% } else { %>
@@ -27,8 +29,8 @@
                 <li class="list-group-item">
                     Price offered (SGD): <%= request.price_offered %>
                 </li>
-                <% if (authUser && (authUser.id ===
-                request.user._id.toString())) { %>
+                <% if (authUser && (authUser.id ===request.user._id.toString()))
+                { %>
                 <li class="list-group-item">
                     <a href="/request/<%= request._id %>/edit">
                         <button
@@ -46,6 +48,7 @@
                         <button
                             type="submit"
                             class="btn btn-outline-success delete"
+                            onclick="return confirm('Are you sure you want to delete this request?')"
                         >
                             Delete
                         </button>

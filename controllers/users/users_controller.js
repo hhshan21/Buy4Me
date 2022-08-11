@@ -104,7 +104,7 @@ const controller = {
         // get user data from db using session user
 
         const profile = req.session.user;
-        console.log("profile: ", profile);
+
         res.render("users/profile", { profile });
     },
 
