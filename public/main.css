@@ -1,6 +1,18 @@
 /* #page-home {
-    background-color: rgb(225, 249, 226);
+    background-color: rgb(233, 250, 250);
 } */
+
+#page-header img {
+    width: 3rem;
+}
+
+/* .navbar {
+    background-color: rgb(233, 250, 235);
+} */
+
+.search {
+    margin-top: 1rem;
+}
 
 .search-bar {
     width: 40%;
@@ -18,7 +30,7 @@
 
 .item-request {
     height: 6%;
-    width: 17%;
+    width: 12rem;
 }
 
 .card-img-top {
@@ -74,11 +86,5 @@
 }
 
 .request-card a {
-    margin-top: 6%;
     margin-right: 10%;
-}
-
-.request-card .delete {
-    margin-top: 6%;
-    margin-right: 0;
 }

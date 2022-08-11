@@ -31,7 +31,7 @@
                 </li>
                 <% if (authUser && (authUser.id ===request.user._id.toString()))
                 { %>
-                <li class="list-group-item">
+                <li class="list-group-item d-flex">
                     <a href="/request/<%= request._id %>/edit">
                         <button
                             type="button"
