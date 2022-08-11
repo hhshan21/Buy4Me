@@ -82,13 +82,12 @@ const controller = {
             }
 
             // store user information in session, typically a user id
-            // HERE
             req.session.user = {
                 username: user.username,
                 id: user._id,
                 email: user.email,
             };
-            // console.log("req.session.user: ", req.session.user);
+            console.log("user_contr req.session.user: ", req.session.user);
 
             // save the session before redirection to ensure page
             // load does not happen before session is saved
@@ -113,7 +112,7 @@ const controller = {
         //     res.redirect("/login");
         //     return;
         // }
-        res.render("users/profile", user);
+        res.render("users/profile/:id", user);
     },
 
     logout: async (req, res) => {

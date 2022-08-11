@@ -1,6 +1,18 @@
 <%- include('../partials/header'); %>
 
-<section
+<div class="container">
+    <ul>
+        <% item.forEach(data => { %>
+        <div>
+            <p><%= data._id %></p>
+            <p><%= data.description %></p>
+            <p><%= data.country %></p>
+        </div>
+        <% }) %>
+    </ul>
+</div>
+
+<!-- <section
     class="vh-100 bg-image"
     style="
         background-image: url('https://media.istockphoto.com/photos/cute-children-or-baby-card-white-clouds-on-the-light-blue-wooden-picture-id1090975842?k=20&m=1090975842&s=612x612&w=0&h=4Ko6v1TJSVqo343f7pPKgU7-bAadGpwHfTTTw7Nokaw=');
@@ -21,7 +33,7 @@
                             <form
                                 id="login-form"
                                 method="POST"
-                                action="/update"
+                                action="/edit"
                             >
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="img"
@@ -109,4 +121,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->

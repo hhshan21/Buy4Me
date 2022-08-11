@@ -15,7 +15,7 @@ module.exports = {
         if (req.session.user) {
             res.locals.authUser = req.session.user;
         }
-        // console.log("res.locals.authUser: ", res.locals.authUser);
+        // console.log("auth_middl res.locals.authUser: ", res.locals.authUser);
 
         next();
     },

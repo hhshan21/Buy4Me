@@ -4,7 +4,7 @@
         <div class="card-header">
             <%= request.user.username %>
             <a
-                href="<%= request.email %>"
+                href='mailto:"<%= request.user.email %>"'
                 class="btn btn-outline-success contact"
                 >Contact</a
             >
@@ -29,7 +29,9 @@
                 <% if (authUser && (authUser.id === request.user._id.toString()
                 )) { %>
                 <li class="list-group-item">
-                    <a href="/update" class="btn btn-outline-success edit"
+                    <a
+                        href="/request/<%= request._id %>/edit"
+                        class="btn btn-outline-success edit"
                         >Edit</a
                     >
                     <a href="" class="btn btn-outline-success delete">Delete</a>
