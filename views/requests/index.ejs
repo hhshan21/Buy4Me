@@ -3,9 +3,7 @@
     <div class="card border-dark mb-3 item-request">
         <div class="card-header">
             <%= request.user.username %>
-            <a
-                href='mailto:"<%= request.user.email %>"'
-                class="btn btn-outline-success contact"
+            <a href='mailto:""' class="btn btn-outline-success contact"
                 >Contact</a
             >
         </div>
@@ -26,20 +24,29 @@
                 <li class="list-group-item">
                     Price offered (SGD): <%= request.price_offered %>
                 </li>
-                <% if (authUser && (authUser.id === request.user._id.toString()
-                )) { %>
+                <% if (authUser && (authUser.id ===
+                request.user._id.toString())) { %>
                 <li class="list-group-item">
-                    <a
-                        href="/request/<%= request._id %>/edit"
-                        class="btn btn-outline-success edit"
-                        >Edit</a
+                    <a href="/request/<%= request._id %>/edit">
+                        <button
+                            type="button"
+                            class="btn btn-outline-success edit-btn"
+                        >
+                            Edit
+                        </button></a
                     >
                     <form
                         method="POST"
                         action="/request/<%= request._id %>/delete?_method=DELETE"
                     >
-                        <a href="/" class="btn btn-outline-success delete"
-                            >Delete</a
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <a href="/">
+                            <button
+                                type="button"
+                                class="btn btn-outline-success delete"
+                            >
+                                Delete
+                            </button></a
                         >
                     </form>
                 </li>

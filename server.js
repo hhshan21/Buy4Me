@@ -40,11 +40,7 @@ app.post("/signup", userController.signUp);
 app.get("/login", userController.showLoginForm);
 app.post("/login", userController.login);
 app.post("/logout", userController.logout);
-app.get(
-    "/profile/:id",
-    authMiddleware.isAuthenticated,
-    userController.showProfile
-);
+app.get("/profile", authMiddleware.isAuthenticated, userController.showProfile);
 app.get(
     "/request",
     authMiddleware.isAuthenticated,

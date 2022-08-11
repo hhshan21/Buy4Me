@@ -40,11 +40,11 @@ const controller = {
     },
 
     delete: async (req, res) => {
-        try {
-            const editItemRequest = await Request.findByIdAndDelete(requestId);
-        } catch (err) {
-            console.log(err);
-        }
+        // try {
+        //     const editItemRequest = await Request.findByIdAndDelete(requestId);
+        // } catch (err) {
+        //     console.log(err);
+        // }
         res.redirect("/");
     },
 };

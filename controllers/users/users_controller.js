@@ -87,7 +87,6 @@ const controller = {
                 id: user._id,
                 email: user.email,
             };
-            // console.log("user_contr req.session.user: ", req.session.user);
 
             // save the session before redirection to ensure page
             // load does not happen before session is saved
@@ -103,16 +102,10 @@ const controller = {
 
     showProfile: async (req, res) => {
         // get user data from db using session user
-        // PROBLEM
-        // let user = null;
-        // try {
-        //     user = await req.session.user.username;
-        // } catch (err) {
-        //     console.log(err);
-        //     res.redirect("/login");
-        //     return;
-        // }
-        res.render("users/profile/:id", user);
+
+        const profile = req.session.user;
+        console.log("profile: ", profile);
+        res.render("users/profile", { profile });
     },
 
     logout: async (req, res) => {
