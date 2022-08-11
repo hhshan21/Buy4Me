@@ -62,7 +62,7 @@ app.put(
     requestController.edit
 );
 app.delete(
-    "/request/:request_id/delete",
+    "/request/:request_id",
     authMiddleware.isAuthenticated,
     requestController.delete
 );

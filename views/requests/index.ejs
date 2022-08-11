@@ -40,17 +40,15 @@
                     >
                     <form
                         method="POST"
-                        action="/request/<%= request._id %>/delete?_method=DELETE"
+                        action="/request/<%= request._id %>?_method=DELETE"
                     >
                         <input type="hidden" name="_method" value="DELETE" />
-                        <a href="/">
-                            <button
-                                type="button"
-                                class="btn btn-outline-success delete"
-                            >
-                                Delete
-                            </button></a
+                        <button
+                            type="submit"
+                            class="btn btn-outline-success delete"
                         >
+                            Delete
+                        </button>
                     </form>
                 </li>
                 <% }%>
