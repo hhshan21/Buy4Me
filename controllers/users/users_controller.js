@@ -82,12 +82,13 @@ const controller = {
             }
 
             // store user information in session, typically a user id
+            // HERE
             req.session.user = {
                 username: user.username,
                 id: user._id,
                 email: user.email,
             };
-            console.log("req.session.user: ", req.session.user);
+            // console.log("req.session.user: ", req.session.user);
 
             // save the session before redirection to ensure page
             // load does not happen before session is saved
@@ -103,14 +104,15 @@ const controller = {
 
     showProfile: async (req, res) => {
         // get user data from db using session user
-        let user = null;
-        try {
-            user = await req.session.user.username;
-        } catch (err) {
-            console.log(err);
-            res.redirect("/login");
-            return;
-        }
+        // PROBLEM
+        // let user = null;
+        // try {
+        //     user = await req.session.user.username;
+        // } catch (err) {
+        //     console.log(err);
+        //     res.redirect("/login");
+        //     return;
+        // }
         res.render("users/profile", user);
     },
 
