@@ -9,7 +9,6 @@ const controller = {
     // create a new item request
     createRequest: async (req, res) => {
         const requestData = req.body;
-
         const newItemRequest = await Request.create({
             ...requestData,
             user: req.session.user.id,
@@ -18,20 +17,26 @@ const controller = {
     },
 
     showEditRequestForm: async (req, res) => {
-        const requestId = req.params.request_id;
-        console.log("requestId: ", requestId);
+        const request = await Request.findById(req.params.request_id);
 
-        const request = await Request.findById(requestId);
-        console.log("request: ", request);
         res.render("requests/edit", { request });
     },
 
     edit: async (req, res) => {
-        const requestId = req.params.request_id;
-        const requestUpdate = req.body;
-        const oldRequest = await Request.findById(requestId);
-        const editItemRequest = await Request.findByIdAndUpdate();
-        // res.redirect("/");
+        try {
+            const requestId = req.params.request_id;
+            const requestUpdate = req.body;
+            console.log("requestUpdate: ", requestUpdate);
+            const editItemRequest = await Request.findByIdAndUpdate(
+                requestId,
+                { ...requestUpdate },
+                { new: true }
+            );
+        } catch (err) {
+            console.log(err);
+        }
+
+        res.redirect("/");
     },
 
     delete: async (req, res) => {

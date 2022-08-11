@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
+const methodOverride = require("method-override");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -28,6 +29,7 @@ app.use(
     })
 );
 app.use(authMiddleware.setAuthUser);
+app.use(methodOverride("_method"));
 
 // route to home page
 app.get("/", pageController.showHome);
@@ -58,11 +60,11 @@ app.get(
     authMiddleware.isAuthenticated,
     requestController.showEditRequestForm
 );
-// app.put(
-//     "/request/:request_id",
-//     authMiddleware.isAuthenticated,
-//     requestController.edit
-// );
+app.put(
+    "/request/:request_id/edit",
+    authMiddleware.isAuthenticated,
+    requestController.edit
+);
 // app.delete(
 //     "/request/:id",
 //     authMiddleware.isAuthenticated,

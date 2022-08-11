@@ -87,7 +87,7 @@ const controller = {
                 id: user._id,
                 email: user.email,
             };
-            console.log("user_contr req.session.user: ", req.session.user);
+            // console.log("user_contr req.session.user: ", req.session.user);
 
             // save the session before redirection to ensure page
             // load does not happen before session is saved

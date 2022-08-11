@@ -18,7 +18,11 @@
                                 Edit your Request
                             </h2>
 
-                            <form id="login-form" method="POST" action="/edit">
+                            <form
+                                id="login-form"
+                                method="POST"
+                                action="/request/<%= request._id %>/edit?_method=PUT"
+                            >
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="img"
                                         >img URL</label
@@ -27,7 +31,7 @@
                                         type="url"
                                         class="form-control form-control-lg"
                                         name="img"
-                                        value="<%=request.img%>"
+                                        value="<%= request.img %>"
                                         required
                                     />
                                 </div>
@@ -43,7 +47,7 @@
                                         type="text"
                                         class="form-control form-control-lg"
                                         name="description"
-                                        value="<%=request.description%>"
+                                        value="<%= request.description %>"
                                         required
                                     />
                                 </div>
@@ -55,7 +59,7 @@
                                         type="text"
                                         class="form-control form-control-lg"
                                         name="country"
-                                        value="<%=request.country%>"
+                                        value="<%= request.country %>"
                                         required
                                     />
                                 </div>
@@ -72,7 +76,7 @@
                                         name="quantity"
                                         min="1"
                                         max="30"
-                                        value="<%=request.quantity%>"
+                                        value="<%= request.quantity %>"
                                         required
                                     />
                                     <p>Between 1 to 30</p>
@@ -87,7 +91,7 @@
                                         type="text"
                                         class="form-control form-control-lg"
                                         name="price_offered"
-                                        value="<%=request.price_offered%>"
+                                        value="<%= request.price_offered %>"
                                         required
                                     />
                                 </div>
