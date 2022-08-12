@@ -1,6 +1,9 @@
-/* #page-home {
-    background-color: rgb(233, 250, 236);
-} */
+#page-home {
+    background-image: url(https://media.istockphoto.com/photos/cute-children-or-baby-card-white-clouds-on-the-light-blue-wooden-picture-id1090975842?k=20&m=1090975842&s=612x612&w=0&h=4Ko6v1TJSVqo343f7pPKgU7-bAadGpwHfTTTw7Nokaw=);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 #page-header img {
     width: 3rem;
@@ -20,6 +23,14 @@
 
 .login-header button {
     margin-left: 1rem;
+}
+
+.main-logo figure {
+    display: flex;
+}
+
+.main-logo figcaption {
+    margin-top: 0.5rem;
 }
 
 .search {
@@ -42,7 +53,7 @@
 
 .item-request {
     height: 6%;
-    width: 12rem;
+    width: 14rem;
 }
 
 .card-img-top {

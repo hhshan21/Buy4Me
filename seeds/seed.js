@@ -14,7 +14,7 @@ const data = [
     },
     {
         username: "toastie",
-        email: "breadlover@gmail.com",
+        email: "toastie@gmail.com",
         img: "https://japan-trip-culture.com/wp-content/uploads/2019/05/Screen-Shot-2019-05-05-at-12.28.11-AM.png",
         description: "Jyagariko",
         country: "Japan",
@@ -46,7 +46,7 @@ const data = [
         description: "I'm Real Mango",
         country: "Thailand",
         quantity: 10,
-        price_offered: 12,
+        price_offered: 15,
     },
     {
         username: "xingQitian",
