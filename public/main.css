@@ -22,6 +22,14 @@
     margin-left: 1rem;
 }
 
+.main-logo figure {
+    display: flex;
+}
+
+.main-logo figcaption {
+    margin-top: 0.5rem;
+}
+
 .search {
     margin-top: 1rem;
 }

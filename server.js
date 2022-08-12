@@ -56,6 +56,7 @@ app.get(
     authMiddleware.isAuthenticated,
     requestController.showEditRequestForm
 );
+
 app.put(
     "/request/:request_id/edit",
     authMiddleware.isAuthenticated,
