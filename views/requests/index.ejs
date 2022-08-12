@@ -6,10 +6,12 @@
             <a
                 href="mailto:<%= request.user.email%>"
                 class="btn btn-outline-success contact"
+                target=" blank"
+                rel="noopener noreferrer"
                 >Contact</a
             >
             <% } else { %>
-            <a href="/login"></a>
+            <a href="/login" target=" blank" rel="noopener noreferrer"></a>
             <% } %>
         </div>
 
@@ -32,7 +34,11 @@
                 <% if (authUser && (authUser.id ===request.user._id.toString()))
                 { %>
                 <li class="list-group-item d-flex">
-                    <a href="/request/<%= request._id %>/edit">
+                    <a
+                        href="/request/<%= request._id %>/edit"
+                        target=" blank"
+                        rel="noopener noreferrer"
+                    >
                         <button
                             type="button"
                             class="btn btn-outline-success edit-btn"
