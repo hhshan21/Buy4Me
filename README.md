@@ -10,7 +10,10 @@ https://buy4me-h.herokuapp.com/
 
 ## User Story
 
-1. When the user first goes to the app -> sees a snapshot of items requested by different users.
+1. When the user first goes to the app -> sees at an instant all of the items requested by different users.
+2. He can sign up for an account and then log in.
+3. Once logged in, he can create/edit/delete request made by him.
+4. He can also contact and connect with a user should he choose to help a user to fulfil their request.
 
 ## Tech used
 
@@ -22,18 +25,25 @@ MEN stack:
 
 ## Technical details
 
-Learn more about functions, DOM manipulation, OOP just to name a few!
+User:
+
+-   sign up through a form
+-   log in through a form -> user is authenticated upon signing in, password is hashed.
+-   create a request using a form
+-   can only edit/delete request of user's own post
+-   can contact other user's via their post
 
 ## Technical challenges
 
-Every step of the project was a challenge. From creating the players to incorporating the logic within the game.
+-   difficulty linking 2 schemas together
+-   understanding the code -> console log alot
 
 ## One new thing learnt
 
-Every step of the project was a challenge. From creating the players to incorporating the logic within the game.
+Always ask and reach out for help!
 
 ## Improvements I might make
 
-1. Add the theme song of POC as audio
-2. Make it responsive
-3. Change the dice colour to show matching dice faces when liar is being called (for easier visual)
+1. Add the function of search where it will filter out the items based on the country specified
+2. Have better CSS styling
+3. Have a map to indicate the item request location
