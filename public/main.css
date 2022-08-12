@@ -1,14 +1,14 @@
 /* #page-home {
-    background-color: rgb(233, 250, 250);
+    background-color: rgb(233, 250, 236);
 } */
 
 #page-header img {
     width: 3rem;
 }
 
-/* .navbar {
-    background-color: rgb(233, 250, 235);
-} */
+.navbar {
+    background-color: rgb(228, 255, 231);
+}
 
 .login-header a {
     color: rgb(0, 125, 78);
