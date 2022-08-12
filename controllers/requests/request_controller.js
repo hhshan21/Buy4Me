@@ -22,6 +22,7 @@ const controller = {
 
     showEditRequestForm: async (req, res) => {
         const request = await Request.findById(req.params.request_id);
+
         res.render("requests/edit", { request });
     },
 

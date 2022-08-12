@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const Users = require("../../models/users/users");
 const userValidators = require("../validators/users");
+const Request = require("../../models/requests/request");
 
 const controller = {
     showSignUpForm: (req, res) => {
@@ -103,17 +104,19 @@ const controller = {
     showProfile: async (req, res) => {
         // get user data from db using session user
 
+        let listOfRequest = null;
+
         try {
-            const profile = req.session.user;
-            const profileId = req.session.user.id;
-            console.log("profile: ", profile);
-            console.log("profileId: ", profileId);
+            listOfRequest = await Request.find({
+                user: req.session.user.id,
+            });
         } catch (err) {
-            res.send("Unable to show profile");
+            console.log(err);
+            res.redirect("/login");
             return;
         }
 
-        res.render("users/profile", { profile });
+        res.render("users/profile", { listOfRequest });
     },
 
     logout: async (req, res) => {
