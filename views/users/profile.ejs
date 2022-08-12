@@ -9,7 +9,6 @@
 <div class="d-flex align-content-stretch flex-wrap mt-5 card-deck">
     <% listOfRequest.forEach(request => { %>
     <div class="card border-dark mb-3 item-request">
-        <div class="card-header">
             <img
                 src="<%= request.img %>"
                 class="card-img-top item-img"
@@ -30,8 +29,7 @@
                     <li class="list-group-item">
                         Price offered (SGD): <%= request.price_offered %>
                     </li>
-                    <% if (authUser && (authUser.id
-                    ===request.user._id.toString())) { %>
+                    <% if (authUser && (authUser.id === request.user._id.toString())) { %>
                     <li class="list-group-item d-flex">
                         <a
                             href="/request/<%= request._id %>/edit"
