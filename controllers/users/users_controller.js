@@ -5,7 +5,7 @@ const Request = require("../../models/requests/request");
 
 const controller = {
     showSignUpForm: (req, res) => {
-        res.render("pages/signup");
+        res.render("users/signup");
     },
 
     signUp: async (req, res) => {
@@ -43,7 +43,7 @@ const controller = {
     },
 
     showLoginForm: (req, res) => {
-        res.render("pages/login");
+        res.render("users/login");
     },
 
     login: async (req, res) => {

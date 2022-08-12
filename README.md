@@ -1,29 +1,23 @@
 # Buy4Me :cloud:
 
 Buy4Me is an Airfrov-inspired app.
-It is an app where you can post your favourite request (anything under the sky) and someone will get it for you.
+It is an app where you can request for anything under the sky and another user will connect with you and get it for you.
 
 ## App link
 
 https://github.com/hhshan21/Buy4Me
 https://buy4me-h.herokuapp.com/
 
-## Using the app
+## User Story
 
-1. Each player is given a set of 5 dices with cups used for concealment.
-2. At the beginning of each round, each player will shuffle their dices and looks at their dices while keeping it concealed from other players.
-3. A player(P1) will begin bidding, annoucing the face value with the minimum number of dice(s) that the player believes are under all of the cups in the game.
-4. On the next player's(P2) turn, he/she will have 2 choices:
-   a. make a higher bid - increasing either the quantity of the face value or the number of dices or both
-   b. challenge P1's bid - essentially calling P1 a liar
-5. Once a bid is challenged, all the dices are revealed.
-6. If the bid is at least as many of the face value as it is called, the bidder (P1) wins otherwise, P2 wins.
+1. When the user first goes to the app -> sees a snapshot of items requested by different users.
 
 ## Tech used
 
 MEN stack:
 -> MongoDB — document database
 -> Express(.js) — Node.js web framework
+-> EJS - Embedded JavaScript
 -> Node(.js) — the premier JavaScript web server
 
 ## Technical details
