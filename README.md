@@ -1,12 +1,14 @@
 # Buy4Me :cloud:
 
-Liar's dice is a game of lie and deceit between 2 or more players through a game of dice!
+Buy4Me is an Airfrov-inspired app.
+It is an app where you can post your favourite request (anything under the sky) and someone will get it for you.
 
-## Game link
+## App link
 
-https://hhshan21.github.io/Liar-s-Dice/
+https://github.com/hhshan21/Buy4Me
+https://buy4me-h.herokuapp.com/
 
-## Playing the game
+## Using the app
 
 1. Each player is given a set of 5 dices with cups used for concealment.
 2. At the beginning of each round, each player will shuffle their dices and looks at their dices while keeping it concealed from other players.
@@ -19,15 +21,20 @@ https://hhshan21.github.io/Liar-s-Dice/
 
 ## Tech used
 
-1. HTML
-2. Javascript
-3. CSS
+MEN stack:
+-> MongoDB — document database
+-> Express(.js) — Node.js web framework
+-> Node(.js) — the premier JavaScript web server
 
-## Learning points
+## Technical details
 
 Learn more about functions, DOM manipulation, OOP just to name a few!
 
-## Challenges
+## Technical challenges
+
+Every step of the project was a challenge. From creating the players to incorporating the logic within the game.
+
+## One new thing learnt
 
 Every step of the project was a challenge. From creating the players to incorporating the logic within the game.
 
