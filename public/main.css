@@ -10,6 +10,18 @@
     background-color: rgb(233, 250, 235);
 } */
 
+.login-header a {
+    color: rgb(0, 125, 78);
+}
+
+.login-header :hover {
+    color: white;
+}
+
+.login-header button {
+    margin-left: 1rem;
+}
+
 .search {
     margin-top: 1rem;
 }
