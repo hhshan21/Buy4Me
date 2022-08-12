@@ -103,7 +103,15 @@ const controller = {
     showProfile: async (req, res) => {
         // get user data from db using session user
 
-        const profile = req.session.user;
+        try {
+            const profile = req.session.user;
+            const profileId = req.session.user.id;
+            console.log("profile: ", profile);
+            console.log("profileId: ", profileId);
+        } catch (err) {
+            res.send("Unable to show profile");
+            return;
+        }
 
         res.render("users/profile", { profile });
     },
