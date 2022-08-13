@@ -5,8 +5,8 @@ It is an app where you can request for anything under the sky and another user w
 
 ## App link
 
-https://github.com/hhshan21/Buy4Me
-https://buy4me-h.herokuapp.com/
+-   https://github.com/hhshan21/Buy4Me
+-   https://buy4me-h.herokuapp.com/
 
 ## User Story
 
