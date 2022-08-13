@@ -78,10 +78,6 @@
     margin-right: 10%;
 }
 
-.update-btn {
-    margin-right: 10%;
-}
-
 .signup-cancel-btn a {
     color: rgb(0, 125, 78);
 }
@@ -103,6 +99,12 @@
 }
 
 #quantity p {
+    font-size: small;
+    color: gray;
+    font-style: italic;
+}
+
+#edit-quantity p {
     font-size: small;
     color: gray;
     font-style: italic;
