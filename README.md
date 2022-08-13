@@ -36,7 +36,7 @@ User:
 ## Technical challenges
 
 -   difficulty linking 2 schemas together
--   understanding the code -> console log alot
+-   understanding the code -> console log everything!
 
 ## One new thing learnt
 
