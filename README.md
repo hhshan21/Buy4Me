@@ -17,10 +17,11 @@ It is an app where you can request for anything under the sky and another user w
 ## Tech used
 
 MEEN stack:
--> MongoDB — document database
--> Express(.js) — Node.js web framework
--> EJS - Embedded JavaScript
--> Node(.js) — the premier JavaScript web server
+
+-   MongoDB — document database
+-   Express(.js) — Node.js web framework
+-   EJS - Embedded JavaScript
+-   Node(.js) — the premier JavaScript web server
 
 ## Technical details
 
