@@ -45,5 +45,5 @@ Always ask and reach out for help!
 ## Improvements I might make
 
 1. Add the function of search where it will filter out the items based on the country specified
-2. Have better CSS styling
-3. Have a map to indicate the item request location
+2. Have a map to indicate the item request location
+3. Create a chat between users
