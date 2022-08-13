@@ -16,7 +16,7 @@ It is an app where you can request for anything under the sky and another user w
 
 ## Tech used
 
-MEN stack:
+MEEN stack:
 -> MongoDB — document database
 -> Express(.js) — Node.js web framework
 -> EJS - Embedded JavaScript
