@@ -36,7 +36,7 @@ const controller = {
             });
         } catch (err) {
             console.log(err);
-            res.send("Failed to create user");
+            res.send("Username already taken!");
             return;
         }
         res.redirect("/login");
